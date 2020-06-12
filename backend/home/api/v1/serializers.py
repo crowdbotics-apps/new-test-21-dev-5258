@@ -8,7 +8,7 @@ from allauth.account.adapter import get_adapter
 from allauth.account.utils import setup_user_email
 from rest_framework import serializers
 from rest_auth.serializers import PasswordResetSerializer
-from home.models import HomePage, CustomText
+from home.models import CustomText, HomePage, R123, R456, R789
 
 User = get_user_model()
 
@@ -82,3 +82,21 @@ class PasswordSerializer(PasswordResetSerializer):
     """Custom serializer for rest_auth to solve reset password error"""
 
     password_reset_form_class = ResetPasswordForm
+
+
+class R789Serializer(serializers.ModelSerializer):
+    class Meta:
+        model = R789
+        fields = "__all__"
+
+
+class R123Serializer(serializers.ModelSerializer):
+    class Meta:
+        model = R123
+        fields = "__all__"
+
+
+class R456Serializer(serializers.ModelSerializer):
+    class Meta:
+        model = R456
+        fields = "__all__"
