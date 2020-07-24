@@ -61,3 +61,13 @@ class R123(models.Model):
 class R456(models.Model):
     "Generated Model"
     r2 = models.BigIntegerField()
+
+
+class Test(models.Model):
+    "Generated Model"
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="test_user",
+    )
+    schedule = models.ForeignKey(
+        "home.R789", on_delete=models.CASCADE, related_name="test_schedule",
+    )
