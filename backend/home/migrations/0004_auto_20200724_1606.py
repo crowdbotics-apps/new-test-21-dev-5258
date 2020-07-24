@@ -9,18 +9,24 @@ class Migration(migrations.Migration):
 
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ('home', '0003_r123_r456_r789'),
+        ("home", "0003_r123_r456_r789"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='customtext',
-            name='r1',
+            model_name="customtext",
+            name="r1",
             field=models.BigIntegerField(blank=True, null=True),
         ),
         migrations.AddField(
-            model_name='homepage',
-            name='r2',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, related_name='homepage_r2', to=settings.AUTH_USER_MODEL),
+            model_name="homepage",
+            name="r2",
+            field=models.ForeignKey(
+                blank=True,
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="homepage_r2",
+                to=settings.AUTH_USER_MODEL,
+            ),
         ),
     ]

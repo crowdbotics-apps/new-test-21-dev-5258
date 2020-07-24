@@ -31,6 +31,13 @@ class HomePage(models.Model):
         blank=True,
         related_name="homepage_r2",
     )
+    r3 = models.ForeignKey(
+        "home.R456",
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+        related_name="homepage_r3",
+    )
 
     @property
     def api(self):
