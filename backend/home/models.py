@@ -8,6 +8,7 @@ from django.db import models
 
 class CustomText(models.Model):
     title = models.CharField(max_length=150,)
+    r1 = models.BigIntegerField(null=True, blank=True,)
 
     def __str__(self):
         return self.title
@@ -23,6 +24,13 @@ class CustomText(models.Model):
 
 class HomePage(models.Model):
     body = models.TextField()
+    r2 = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+        related_name="homepage_r2",
+    )
 
     @property
     def api(self):
