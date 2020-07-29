@@ -26,18 +26,19 @@ class HomePage(models.Model):
     body = models.TextField()
     r2 = models.ForeignKey(
         settings.AUTH_USER_MODEL,
-        on_delete=models.CASCADE,
         null=True,
         blank=True,
+        on_delete=models.CASCADE,
         related_name="homepage_r2",
     )
     r3 = models.ForeignKey(
         "home.R456",
-        on_delete=models.CASCADE,
         null=True,
         blank=True,
+        on_delete=models.CASCADE,
         related_name="homepage_r3",
     )
+    r4 = models.BooleanField(null=True, blank=True,)
 
     @property
     def api(self):
