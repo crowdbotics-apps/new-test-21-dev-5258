@@ -3,6 +3,7 @@ from rest_framework import authentication
 from .serializers import (
     CustomTextSerializer,
     HomePageSerializer,
+    NEW1Serializer,
     R123Serializer,
     R456Serializer,
     R789Serializer,
@@ -21,7 +22,7 @@ from home.api.v1.serializers import (
     HomePageSerializer,
     UserSerializer,
 )
-from home.models import CustomText, HomePage, R123, R456, R789, Test
+from home.models import CustomText, HomePage, NEW1, R123, R456, R789, Test
 
 
 class SignupViewSet(ModelViewSet):
@@ -95,3 +96,12 @@ class TestViewSet(viewsets.ModelViewSet):
         authentication.TokenAuthentication,
     )
     queryset = Test.objects.all()
+
+
+class NEW1ViewSet(viewsets.ModelViewSet):
+    serializer_class = NEW1Serializer
+    authentication_classes = (
+        authentication.SessionAuthentication,
+        authentication.TokenAuthentication,
+    )
+    queryset = NEW1.objects.all()

@@ -72,3 +72,8 @@ class Test(models.Model):
     schedule = models.ForeignKey(
         "home.R789", on_delete=models.CASCADE, related_name="test_schedule",
     )
+
+
+class NEW1(models.Model):
+    "Generated Model"
+    r1 = models.BigIntegerField()
